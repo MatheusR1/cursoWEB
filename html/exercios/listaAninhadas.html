@@ -1,0 +1,51 @@
+<h1>listas aninhadas</h1>
+<ul class="tree">
+    <li>
+        <span pasta>backend</span>
+        <ul>
+            <li>
+                <span pasta>app</span>
+                <ul>
+                    <li>produtos.js</li>
+                    <li>usuários.js</li>
+                    <li>vendas.js</li>
+                </ul>
+            </li>
+            <li>
+                <span pasta>config</span>
+                <ul>
+                    <li>Banco.js</li>
+                    <li>Rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+        <li>
+            <span pasta>frontend</span>
+            <ul>
+                <li>
+                    <span pasta>public</span>
+                    <ul>
+                        <li>app.css</li>
+                        <li>app.js</li>
+                        <li>index.js</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    document.querySelectorAll("[pasta]").forEach(pasta => {
+        pasta.onclick = function(e) {
+            //debugger =: possso usar isso pra debugar codigo
+            const ul = pasta.nextElementSibling;
+            const d = ul.style.display
+            ul.style.display = d === "none" ? "block" : "none"
+            console.log("teste");
+        }
+    })
+</script>

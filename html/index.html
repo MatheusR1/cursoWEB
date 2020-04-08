@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercios HTML</title>
+</head>
+
+<body>
+    <header>
+        <header>
+            <h1>exercios html</h1>
+
+        </header>
+
+        <nav>
+            <p><a href="/html/exercios/teste.html"> primeiro teste</a></p>
+            <p><a href="exercios/teste2.html"> segundo teste</a> </p>
+            <p><a href="/html/exercios/tags.html"> Tags</a> </p>
+            <p><a href="/html/exercios/listas.html"> Litas</a> </p>
+            <p><a href="/html/exercios/listaAninhadas.html"> Listas Aninhadas</a> </p>
+            <p><a href="/html/exercios/links.html"> Links</a> </p>
+        </nav>
+
+        <section id="conteudo"></section>
+
+</body>
+
+<footer>
+    <br> Curso de web moderno
+</footer>
+<script>
+    // aqui eu boto o nome da tag
+    document.querySelectorAll("a").forEach(link => {
+        const conteudo = document.getElementById("conteudo")
+
+        link.onclick = function(e) { // e da função é p evento q vc recebe
+            e.preventDefault();
+
+            fetch(link.href)
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html)
+        }
+    });
+</script>
+
+</html>
